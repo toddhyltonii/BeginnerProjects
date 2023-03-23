@@ -2,6 +2,7 @@ from cm_data import flavors, resources
 import os
 
 def enough_resources(recipe):
+    """Determines if the coffee machine has enough materials to make the drink"""
     for item in recipe:
         if recipe[item] > resources[item]:
             print(f"Not enough {item} to complete the order")
@@ -9,6 +10,7 @@ def enough_resources(recipe):
     return True
 
 def coins_inserted():
+    """Counts the amount of money inserted by the user"""
     print('Please insert coins')
     coins = int(input('How many quarters?: ')) * .25
     coins += int(input('How many dimes?: ')) * .1
@@ -17,6 +19,7 @@ def coins_inserted():
     return coins
 
 def enough_money(money):
+    """Determines if the user inserted enough money to pay for the drink"""
     if money < drink['price']:
         print('Not enough money. Your purchase has been refunded')
         return False
@@ -26,6 +29,7 @@ def enough_money(money):
     return True
 
 def dispense_drink(recipe):
+    """Gives the user the desired drink"""
     resources['water'] -= ingredients['water']
     resources['coffee'] -= ingredients['coffee']
     resources['milk'] -= ingredients['milk']
