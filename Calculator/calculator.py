@@ -39,7 +39,7 @@ def calc():
     except:
         will_continue = input('Invalid input. If you wish to exit, type \'quit\'. Otherwise, hit the enter key to restart ')
         if will_continue == 'quit':
-            return
+            quit()
         os.system('cls')
         calc()
 

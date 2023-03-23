@@ -1,6 +1,6 @@
 import random
-from hangman import hangman_images, logo, word_list
 import os
+from hangman_assets import hangman_images, logo, word_list
 
 os.system('cls')
 print(logo)
